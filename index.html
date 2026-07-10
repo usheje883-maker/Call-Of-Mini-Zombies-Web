@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | CoM Zombies</title>
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/usheje883-maker/Call-Of-Mini-Zombies-Web/TemplateData/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/usheje883-maker/Call-Of-Mini-Zombies-Web/TemplateData/style.css">
-    <script src="https://cdn.jsdelivr.net/gh/usheje883-maker/Call-Of-Mini-Zombies-Web/TemplateData/UnityProgress.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/usheje883-maker/Call-Of-Mini-Zombies-Web/Build/UnityLoader.js"></script>
+    <title>CoM Zombies</title>
+
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
+
+        #gameContainer {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gameContainer"></div>
+
     <script>
-      var gameInstance = UnityLoader.instantiate(
-        "gameContainer",
-        "https://cdn.jsdelivr.net/gh/usheje883-maker/Call-Of-Mini-Zombies-Web/Build/Files.json",
-        { onProgress: UnityProgress }
-      );
+        var gameInstance = UnityLoader.instantiate(
+            "gameContainer",
+            "Build/Files.json",
+            {
+                onProgress: UnityProgress
+            }
+        );
     </script>
-  </head>
-  <body>
-    <div class="webgl-content">
-      <div id="gameContainer" style="width: 100vw; height: 100vh"></div>
-    </div>
-  </body>
+</body>
 </html>
